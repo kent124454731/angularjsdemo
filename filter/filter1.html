@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../script/angular.js"></script>
+    <script src="js/filter1.js"></script>
+</head>
+<body ng-controller="filter1">
+lowercase: {{name}}<br><br>
+
+uppercase:{{name2}}<br><br>
+
+currency:{{amount}}<br><br>
+
+filter:isCapitalized : {{ ['Ari','likes','to','travel'] | filter:isCapitalized }} <br><br>
+
+{{ ['Ari','Lerner','Likes','To','Eat','Pizza'] | filter:'e' }} <br><br>
+
+根据对象属性过滤: {{ [{
+'name': 'Ari',
+'City': 'San Francisco',
+'favorite food': 'Pizza'
+},{
+'name': 'Nate',
+'City': 'San Francisco',
+'favorite food': 'indian food'
+}] | filter:{'favorite food': 'Pizza'} }} <br><br>
+
+json: {{ {'name': 'Ari', 'City': 'SanFrancisco'} | json }} <br><br>
+
+javascript中的运用json过滤前 : {{info}} ,后 ：{{jsonStr}} <br><br>
+
+San Francisco is very cloudy : limit :2 ——> {{ 'San Francisco is very cloudy' | limitTo:3 }}  <br><br>
+
+number : {{ 1.234567 | number:2 }} <br><br>
+
+</body>
+</html>

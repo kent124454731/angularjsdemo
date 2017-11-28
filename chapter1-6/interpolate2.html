@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <script src="../script/angular.js"></script>
+    <script src="js/interpolateTest.js"></script>
+</head>
+<body ng-controller="MyController">
+<div id="emailEditor">
+    <input ng-model="from"
+           placeholder="from"/>
+    <input ng-model="to"
+           placeholder="to"/>
+    <textarea ng-model="emailBody"></textarea>
+</div>
+<div id="emailPreview">
+    <pre>{{previewText}}</pre>
+</div>
+</body>
+</html>
