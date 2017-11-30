@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Directive Scope</title>
+    <script src="../script/angular.js"></script>
+    <script src="script/directivescope.js"></script>
+</head>
+<body>
+<div ng-init="myProperty='wow,this is cool'">
+    Surrounding scope: {{ myProperty }}
+    <div my-directive></div>
+    <div my-inherit-scope-directive></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Value of Scope</title>
+    <script src="../script/angular.js"></script>
+    <script src="script/scope1.js"></script>
+</head>
+<body>
+<div ng-app="myApp"
+     ng-init="someProperty = 'some data'">
+    <div ng-init="siblingProperty='moredata'">
+        Inside Div Two: {{ aThirdProperty }}
+        <div ng-init="aThirdProperty = 'data for 3rd property'"
+             ng-controller="SomeController">
+            Inside Div Three: {{ aThirdProperty }}
+            <div ng-init="aFourthProperty">
+                Inside Div Four: {{ aThirdProperty }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-app="myApp"
+     ng-init="someProperty = 'some data'">
+    <div ng-init="siblingProperty='moredata'">
+        Inside Div Two: {{ aThirdProperty }}
+        <div ng-init="aThirdProperty = 'data for 3rd property'"
+             ng-controller="SomeController">
+            Inside Div Three: {{ aThirdProperty }}
+            <div ng-init="aFourthProperty">
+                Inside Div Four: {{ aThirdProperty }}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
