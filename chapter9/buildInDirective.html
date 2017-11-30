@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Directive build in AngularJS </title>
+    <script src="../script/angular.js"></script>
+    <script src="script/script1.js"></script>
+</head>
+<body ng-controller="s1">
+<h3>ng-disabled</h3>
+<input type="text" ng-disabled="textEnable">
+<button ng-click="textEnable=!textEnable">Click me change disabled</button>
+<br>
+<input type="text" ng-model="someProperty" placeholder="TypetoEnable">
+<button ng-model="button" ng-disabled="!someProperty">AButton</button>
+<br>
+<h3>ng-readonly</h3>
+Type here to make sibling readonly:
+<input type="text" ng-model="p2"><br/>
+<input type="text"
+       ng-readonly="p2"
+       value="Some text here"/>
+
+<br>
+<h3>ng-checked</h3>
+<label>s3 = {{s3}}</label>
+<input type="checkbox"
+       ng-checked="s3"
+       ng-init="s3 = true"
+       ng-model="s3">
+
+<br>
+<h3>ng-selected</h3>
+<label>Select Two Fish:</label>
+<input type="checkbox"
+       ng-model="isTwoFish"><br/>
+<select>
+    <option>One Fish</option>
+    <option ng-selected="isTwoFish">Two Fish</option>
+</select>
+
+<br>
+<h3>ng-href</h3>
+<a ng-href="{{ myHref }}">I'm feeling lucky, when I load</a><br>
+<a href="{{ myHref }}">I'm feeling 404</a>
+
+<br>
+<h3>ng-src</h3>
+<h5>加载会报一个错误</h5>
+<img src="{{imgSrc}}"/>
+<h5>Rightway</h5>
+<img ng-src="{{imgSrc}}"/>
+</body>
+</html>

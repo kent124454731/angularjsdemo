@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../script/angular.js"></script>
+    <script src="script/script1.js"></script>
+</head>
+<body ng-controller="MyController">
+<!------- 作为HTML元素 restrict为E(element)可用------------->
+<h3>单向绑定: </h3>
+<div my-directive my-url="{{myUrl}}" link-text="myLinkText"></div>
+<h3>双向绑定</h3>
+<div my-directive3 my-url="{{myUrl}}" link-text="{{myLinkText}}"></div>
+<h3>同样都绑定了myLinkText,注意观察下面myLinkText的变化</h3>
+<h4>{{myLinkText}}</h4>
+</body>
+</html>

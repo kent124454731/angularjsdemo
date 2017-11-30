@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../script/angular.js"></script>
+    <script src="../script/angular-messages.js"></script>
+    <script src="js/message.js"></script>
+</head>
+<body>
+<form name="signup_form" novalidate ng-submit="signupForm()" ng-controller="signupController"
+      ensure-unique="/api/checkUsername.json">
+    <label>
+        Your name
+    </label>
+    <input type="text" placeholder="Username" name="username" ng-model="signup.username"
+           ng-minlength=3 ng-maxlength=20 required/>
+    <div class="error" ng-messages="signup_form.$error">
+        <div ng-message="checkingAvailability">
+            Checking...
+        </div>
+        <div ng-message="usernameAvailablity">
+            The username has already been taken. Please choose another
+        </div>
+        <div ng-message="required">
+            Make sure you enter your username
+        </div>
+        <div ng-message="minlength">Your field is too short</div>
+        <div ng-message="maxlength">Your field is too long</div>
+    </div>
+    <button type="submit">
+        Submit
+    </button>
+</form>
+</body>
+</html>

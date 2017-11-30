@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../script/angular.js"></script>
+    <script src="script/scope.js"></script>
+</head>
+<body>
+<p>We can access: {{ rootProperty }}</p>
+<div ng-controller="ParentController">
+    <p>We can access: {{ rootProperty }}
+        and {{ parentProperty }}</p>
+    <div ng-controller="ChildController">
+        <p>
+            We can access:
+            {{ rootProperty }} and
+            {{ parentProperty }} and
+            {{ childProperty }}
+        </p>
+        <p>{{ fullSentenceFromChild }}</p>
+    </div>
+</div>
+
+</body>
+</html>

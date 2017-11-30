@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-XX</title>
+    <script src="../script/angular.js"></script>
+    <script src="script/ng3.js"></script>
+    <style>
+        .odd {
+            background-color: blue;
+        }
+
+        .even {
+            background-color: red;
+        }
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body ng-controller="NgController">
+<input type="text" ng-model="person.name"/>
+<div ng-switch on="person.name">
+    <p ng-switch-default>And the winner is</p>
+    <h1 ng-switch-when="Ari">{{ person.name }}</h1>
+</div>
+
+
+<ul ng-controller="NgController">
+    <li ng-repeat="person in people" ng-class="{even: !$even, odd: !$odd}">
+        {{person.name}} lives in {{person.city}}
+    </li>
+</ul>
+
+<ul ng-controller="NgController">
+    <li ng-repeat="person in people" ng-class="{even: !$even, odd: !$odd}">
+        <p ng-bind="person.name"></p> lives in <p ng-bind="person.city"></p>
+    </li>
+</ul>
+
+<br>
+<h3>ng-class</h3>
+<div ng-controller="LotteryController">
+    <div ng-class="{red: x > 5}"
+         ng-if="x > 3">
+        You won!
+    </div>
+    <button ng-click="x = generateNumber()"
+            ng-init="x = 0">
+        Draw Number
+    </button>
+    <p>Number is: {{ x }}</p>
+</div>
+
+</body>
+</html>

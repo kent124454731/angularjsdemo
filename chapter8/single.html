@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../script/angular.js"></script>
+    <script src="script/script1.js"></script>
+</head>
+<body>
+<!------- 作为HTML元素 restrict为E(element)可用------------->
+<h3>element</h3>
+<a-href></a-href>
+<!------- 作为元素属性 restrict为A(attribute)可用 建议尽量使用属性方式，因为它有比较好的跨浏览器兼容性------------->
+<h3>attribute</h3>
+<div a-href></div>
+<!------- 作为类 restrict为C(class)可用 默认不设置C时,C无效------------->
+<h3>class</h3>
+<div class="a-href"></div>
+</body>
+</html>
